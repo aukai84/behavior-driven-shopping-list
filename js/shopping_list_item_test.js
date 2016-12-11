@@ -21,8 +21,11 @@ describe("ShoppingListItem", () => {
   });
   it("should have property to show if its done", () => {
     milk.should.have.property("is_done")
+    milk.is_done.should.equal(false)
   });
   it("should have method check", ()=> {
     milk.check.should.be.a.function
+    milk.check();
+    milk.is_done.should.equal(true)
   });
 });
