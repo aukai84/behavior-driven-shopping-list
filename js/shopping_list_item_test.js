@@ -47,8 +47,11 @@ describe("ShoppingListItem", () => {
 
 describe("ShoppingList", () => {
   let list;
+  let eggs;
   beforeEach(() => {
     list = new ShoppingList();
+    eggs = new ShoppingListItem("Eggs", "Yolkie");
+
   });
   it("should be a class", () => {
     list.should.be.a.function
@@ -69,6 +72,7 @@ describe("ShoppingList", () => {
     list.addItem.should.be.a.function
   });
   it("should have an argument ShoppingListItem", () => {
-    list.addItem().should.have.length.of(1)
-  })
+    list.addItem(eggs);
+    list.items[0].should.equal({name: "Eggs", description: "Yolkie"});
+  });
 });
