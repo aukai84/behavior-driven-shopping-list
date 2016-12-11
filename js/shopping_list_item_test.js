@@ -28,4 +28,9 @@ describe("ShoppingListItem", () => {
     milk.check();
     milk.is_done.should.equal(true)
   });
+  it("should have a method uncheck", ()=> {
+    milk.uncheck.should.be.a.function
+    milk.uncheck()
+    milk.is_done.should.equal(false)
+  })
 });
