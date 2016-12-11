@@ -95,4 +95,7 @@ describe("ShoppingList", () => {
     list.removeItem(bacon);
     list.items.should.not.contain(bacon);
   });
+  it("should have a method render", ()=> {
+    list.render.should.be.a.function
+  })
 });
