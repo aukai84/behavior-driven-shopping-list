@@ -50,4 +50,10 @@ describe("ShoppingList", () => {
   it("should be a class", () => {
     list.should.be.a.function
   });
+  it("should have an items property", () => {
+    list.should.have.property("items")
+  });
+  it("items should be an array", () => {
+    list.items.should.be.an("array")
+  })
 });
