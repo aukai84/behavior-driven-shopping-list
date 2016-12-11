@@ -37,5 +37,7 @@ describe("ShoppingListItem", () => {
   });
   it("should have a method render", () => {
     milk.render.should.be.a.function
+    milk.render().should.be.a("string")
+    //will come back to render in the future
   });
 });
