@@ -24,6 +24,5 @@ describe("ShoppingListItem", () => {
   });
   it("should have method check", ()=> {
     milk.check.should.be.a.function
-    milk.check().should.equal(milk.is_done = true)
   });
 });
