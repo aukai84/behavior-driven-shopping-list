@@ -15,9 +15,11 @@ describe("ShoppingListItem", () => {
   });
   it("should have a name property", () => {
     milk.should.have.property("name")
+    milk.name.should.be.a("string")
   });
-  it("should haev property description", () => {
+  it("should have property description", () => {
     milk.should.have.property("description")
+    milk.description.should.be.a("string")
   });
   it("should have property to show if its done", () => {
     milk.should.have.property("is_done")
@@ -32,5 +34,8 @@ describe("ShoppingListItem", () => {
     milk.uncheck.should.be.a.function
     milk.uncheck()
     milk.is_done.should.equal(false)
-  })
+  });
+  it("should have a method render", () => {
+    milk.render.should.be.a.function
+  });
 });
