@@ -21,6 +21,9 @@ describe("ShoppingListItem", () => {
     milk.should.have.property("description")
     milk.description.should.be.a("string")
   });
+  it("should only have two parameters", () => {
+    milk.constructor.should.have.length(2)
+  })
   it("should have property to show if its done", () => {
     milk.should.have.property("is_done")
     milk.is_done.should.equal(false)
@@ -63,6 +66,6 @@ describe("ShoppingList", () => {
     list.addItem.should.be.a.function
   });
   it("should have an argument ShoppingListItem", () => {
-    list.should.have.length.of(1)
+    list.addItem().should.have.length.of(1)
   })
 });
