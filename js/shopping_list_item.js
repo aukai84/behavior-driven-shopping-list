@@ -1,5 +1,8 @@
 /*jshint esversion: 6 */
 class ShoppingListItem {
-  constructor(){}
+  constructor(name, description){
+    this.name = name;
+    this.description = description;
+  }
 }
 
