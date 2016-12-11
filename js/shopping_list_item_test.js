@@ -80,6 +80,13 @@ describe("ShoppingList", () => {
   it("should have method removeItem", () => {
     list.removeItem.should.be.a.function
   });
+  it("should remove the last item if no argument is passed", () => {
+    let bacon = new ShoppingListItem("Bacon", "Crispy");
+    list.addItem(eggs);
+    list.addItem(bacon);
+    list.removeItem();
+    list.items.should.not.contain(bacon);
+  });
   it("should should have ShoppingListItem argument that removes it from list", () => {
     let bacon = new ShoppingListItem("Bacon", "So Gooood");
     list.addItem(bacon);
