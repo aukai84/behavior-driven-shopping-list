@@ -10,6 +10,7 @@ class ShoppingListItem {
     this.uncheck = function(){
       this.is_done = false;
     };
+    this.render = function(){};
   }
 }
 
