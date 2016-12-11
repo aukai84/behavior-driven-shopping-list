@@ -25,6 +25,13 @@ class ShoppingList {
       throw Error("Not an item in your list");
    }
   }
+  removeItem(item){
+    if(item instanceof ShoppingListItem){
+      if(this.items.indexOf(item) > -1){
+      this.items.splice(this.items.indexOf(item), 1);
+      }
+    }
+  }
 }
 
 var list = new ShoppingList();
