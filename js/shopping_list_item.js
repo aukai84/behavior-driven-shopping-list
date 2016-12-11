@@ -7,6 +7,9 @@ class ShoppingListItem {
     this.check = function(){
       this.is_done = true;
     };
+    this.uncheck = function(){
+      this.is_done = false;
+    };
   }
 }
 
