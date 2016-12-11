@@ -41,3 +41,13 @@ describe("ShoppingListItem", () => {
     //will come back to render in the future
   });
 });
+
+describe("ShoppingList", () => {
+  let list;
+  beforeEach(() => {
+    list = new ShoppingList();
+  });
+  it("should be a class", () => {
+    list.should.be.a.function
+  });
+});
