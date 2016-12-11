@@ -58,5 +58,11 @@ describe("ShoppingList", () => {
   });
   it("items array should be empty", () => {
     list.items.length.should.equal(0)
+  });
+  it("should have method addItem", () => {
+    list.addItem.should.be.a.function
+  });
+  it("should have an argument ShoppingListItem", () => {
+    list.should.have.length.of(1)
   })
 });
