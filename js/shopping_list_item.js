@@ -14,5 +14,9 @@ class ShoppingListItem {
   }
 }
 
-class ShoppingList {}
+class ShoppingList {
+  constructor(){
+    this.items = [];
+  }
+}
 
