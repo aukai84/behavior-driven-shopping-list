@@ -19,7 +19,14 @@ class ShoppingList {
     this.items = [];
   }
   addItem(item){
+    if(item instanceof ShoppingListItem){
     this.items.push(item);
+    } else {
+      throw Error("Not an item in your list");
+   }
   }
 }
+
+var list = new ShoppingList();
+var bacon = new ShoppingListItem("Bacon", "Good");
 

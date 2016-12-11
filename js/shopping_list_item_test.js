@@ -51,7 +51,6 @@ describe("ShoppingList", () => {
   beforeEach(() => {
     list = new ShoppingList();
     eggs = new ShoppingListItem("Eggs", "Yolkie");
-    console.log(eggs)
   });
   it("should be a class", () => {
     list.should.be.a.function
@@ -72,12 +71,11 @@ describe("ShoppingList", () => {
     list.addItem.should.be.a.function
   });
   it("should have an argument ShoppingListItem", () => {
-    if(eggs instanceof ShoppingListItem){
+   // var result = list.addItem("aukai");
+   // console.log(result);
     list.addItem(eggs);
     console.log(list.items[0]);
     list.items[0].should.equal(eggs);
-  } else {
-    throw Error("Item is not in your list");
-  }
   });
+
 });
