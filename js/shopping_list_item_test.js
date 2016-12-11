@@ -75,7 +75,7 @@ describe("ShoppingList", () => {
    // console.log(result);
     list.addItem(eggs);
     console.log(list.items[0]);
-    list.items[0].should.equal(eggs);
+    list.items.should.contain(eggs);
   });
 
 });
