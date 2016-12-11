@@ -22,6 +22,7 @@ describe("ShoppingListItem", () => {
     milk.description.should.be.a("string")
   });
   it("should only have two parameters", () => {
+    console.log(milk)
     milk.constructor.should.have.length(2)
   })
   it("should have property to show if its done", () => {

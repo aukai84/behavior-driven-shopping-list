@@ -28,8 +28,7 @@ class ShoppingList {
   removeItem(item){
     if(arguments.length === 0){
       this.items.pop();
-    }
-    if(item instanceof ShoppingListItem){
+    } else if(item instanceof ShoppingListItem){
       if(this.items.indexOf(item) > -1){
       this.items.splice(this.items.indexOf(item), 1);
       }
