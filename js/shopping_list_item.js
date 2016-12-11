@@ -14,3 +14,5 @@ class ShoppingListItem {
   }
 }
 
+class ShoppingList {}
+
