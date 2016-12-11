@@ -56,6 +56,9 @@ describe("ShoppingList", () => {
   it("should have an items property", () => {
     list.should.have.property("items")
   });
+  it("should not pass through any paremeters", () => {
+    list.constructor.should.have.length(0)
+  });
   it("items should be an array", () => {
     list.items.should.be.an("array")
   });
