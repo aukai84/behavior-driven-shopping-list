@@ -72,8 +72,12 @@ describe("ShoppingList", () => {
     list.addItem.should.be.a.function
   });
   it("should have an argument ShoppingListItem", () => {
+    if(eggs instanceof ShoppingListItem){
     list.addItem(eggs);
-    console.log(list.items[0])
+    console.log(list.items[0]);
     list.items[0].should.equal(eggs);
+  } else {
+    throw Error("Item is not in your list");
+  }
   });
 });
