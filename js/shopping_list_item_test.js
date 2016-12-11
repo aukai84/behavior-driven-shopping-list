@@ -55,5 +55,8 @@ describe("ShoppingList", () => {
   });
   it("items should be an array", () => {
     list.items.should.be.an("array")
+  });
+  it("items array should be empty", () => {
+    list.items.length.should.equal(0)
   })
 });
