@@ -70,12 +70,21 @@ describe("ShoppingList", () => {
   it("should have method addItem", () => {
     list.addItem.should.be.a.function
   });
-  it("should have an argument ShoppingListItem", () => {
+  it("should have an argument that is a ShoppingListItem and adds it to list", () => {
    // var result = list.addItem("aukai");
    // console.log(result);
     list.addItem(eggs);
     console.log(list.items[0]);
     list.items.should.contain(eggs);
   });
-
+  it("should have method removeItem", () => {
+    list.removeItem.should.be.a.function
+  });
+  it("should should have ShoppingListItem argument that removes it from list", () => {
+    let bacon = new ShoppingListItem("Bacon", "So Gooood");
+    list.addItem(bacon);
+    list.addItem(eggs);
+    list.removeItem(bacon);
+    list.items.should.not.contain(bacon);
+  });
 });
