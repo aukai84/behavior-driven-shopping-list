@@ -23,6 +23,12 @@ class ShoppingList {
       throw Error("Cannot remove item that isn't a shopping list item");
     }
   }
-  render(){return "test";}
+  render(){
+    let newList = '';
+    for(var i = 0; i < this.items.length; i ++){
+      newList += this.items[i].render();
+    }
+    return `<ul>${newList}</ul>`;
+  }
 
 }
