@@ -23,5 +23,6 @@ class ShoppingList {
       throw Error("Cannot remove item that isn't a shopping list item");
     }
   }
+  render(){return "test";}
 
 }
