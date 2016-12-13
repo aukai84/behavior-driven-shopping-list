@@ -97,5 +97,8 @@ describe("ShoppingList", () => {
   });
   it("should have a method render", ()=> {
     list.render.should.be.a.function
+  });
+  it("should return a formatted html string", () => {
+    list.render().should.be.a("string")
   })
 });
