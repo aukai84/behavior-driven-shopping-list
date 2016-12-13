@@ -75,7 +75,7 @@ describe("ShoppingList", () => {
    // var result = list.addItem("aukai");
    // console.log(result);
     list.addItem(eggs);
-    console.log(list.items[0]);
+    //console.log(list.items[0]);
     list.items.should.contain(eggs);
   });
   it("should have method removeItem", () => {
@@ -100,5 +100,5 @@ describe("ShoppingList", () => {
   });
   it("should return a formatted html string", () => {
     list.render().should.be.a("string")
-  })
+  });
 });
