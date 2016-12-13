@@ -10,7 +10,9 @@ class ShoppingListItem {
     this.uncheck = function(){
       this.is_done = false;
     };
-    this.render = function(){return "testing";};
+    this.render = function(){
+      return `<li class='completed_${this.is_done}'><span>${this.name}</span><span>${this.description}</span></li>`;
+    };
   }
 }
 

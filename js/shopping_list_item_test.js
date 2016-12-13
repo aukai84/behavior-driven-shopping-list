@@ -42,6 +42,7 @@ describe("ShoppingListItem", () => {
   it("should have a method render", () => {
     milk.render.should.be.a.function
     milk.render().should.be.a("string")
+    milk.render().should.equal(`<li class='completed_${milk.is_done}'><span>${milk.name}</span><span>${milk.description}</span></li>`)
     //will come back to render in the future
   });
 });
