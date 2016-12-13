@@ -49,10 +49,16 @@ describe("ShoppingListItem", () => {
 
 describe("ShoppingList", () => {
   let list;
+  let milk;
   let eggs;
+  let rice;
+  let juice;
   beforeEach(() => {
+    milk = new ShoppingListItem("Milk", "Creamy");
     list = new ShoppingList();
     eggs = new ShoppingListItem("Eggs", "Yolkie");
+    juice = new ShoppingListItem("Juice", "Fruity");
+    rice = new ShoppingListItem("Rice", "Fluffy");
   });
   it("should be a class", () => {
     list.should.be.a.function
@@ -101,5 +107,18 @@ describe("ShoppingList", () => {
   });
   it("should return a formatted html string", () => {
     list.render().should.be.a("string")
+  });
+  it("should combine the rendered items on list into one formatted list", () => {
+    list.addItem(juice);
+    list.addItem(milk);
+    list.addItem(rice);
+    console.log(list);
+    let newList = '';
+    for(var i = 0; i < list.items.length; i++){
+      newList += list.items[i].render();
+    }
+    var rendered = `<ul>${newList}</ul>`;
+    console.log(rendered);
+    list.render().should.equal(rendered);
   });
 });
