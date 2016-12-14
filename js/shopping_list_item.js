@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+var nonString;
 class ShoppingListItem {
   constructor(name, description){
     this.name = name;
@@ -17,7 +18,7 @@ class ShoppingListItem {
       listItem.className = `completed_${this.is_done}`;
 
       let checkBox = document.createElement('input');
-      checkBox.className = this.name;
+      checkBox.className = this.description;
       checkBox.type = "checkbox";
       listItem.appendChild(checkBox);
       let index = myShoppingList.items.indexOf(this);
@@ -34,8 +35,8 @@ class ShoppingListItem {
 
 
       let removeButton = document.createElement('button');
-      removeButton.className = this.name;
-      //removeButton.addEventListener("click", () => {removeItemButtonClicked(index)});
+      removeButton.className = "remove_item_button";
+      removeButton.addEventListener("click", () => {removeItemButtonClicked(index)});
       removeButton.innerHTML = "X";
       listItem.appendChild(removeButton);
 

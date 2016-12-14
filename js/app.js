@@ -12,11 +12,15 @@ function add_to_shopping_list(){
   myShoppingList.addItem(new_shopping_list_item);
   document.getElementById("content").innerHTML = myShoppingList.render();
 
-  var test = document.getElementsByClassName(itemDescription);
-  console.log(test);
-  test.addEventListener("click", () => {
-    removeItemButtonClicked(myShoppingList.items.indexOf(new_shopping_list_item));
-  });
+ let removeItems = document.querySelectorAll(".remove_item_button");
+  for(let i = 0; i < removeItems.length; i++){
+    console.log(removeItems[i]);
+    removeItems[i].addEventListener("click", () => {
+      removeItemButtonClicked(i);
+    });
+  }
+
+
 }
 
 
@@ -32,7 +36,18 @@ function changeCheckedStatus(idx, checkbox){
 }
 
 function removeItemButtonClicked(idx){
-
+console.log(idx)
+  console.log(myShoppingList.items[idx])
   myShoppingList.removeItem(myShoppingList.items[idx]);
   document.getElementById("content").innerHTML = myShoppingList.render();
+
+  let removeItems = document.querySelectorAll(".remove_item_button");
+  for(let i = 0; i < removeItems.length; i++){
+    console.log(removeItems[i]);
+    removeItems[i].addEventListener("click", () => {
+      removeItemButtonClicked(i);
+    });
+  }
+
+  console.log(myShoppingList.items)
 }
