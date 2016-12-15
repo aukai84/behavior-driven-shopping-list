@@ -1,12 +1,15 @@
 /* jshint esversion: 6 */
 let myShoppingList = new ShoppingList();
-document.getElementById("content").innerHTML = myShoppingList.render();
+const contentContainer = document.getElementById("content");
+contentContainer.innerHTML = myShoppingList.render();
 
+const itemNameBox = document.getElementById("itemName");
+const itemDescriptionBox = document.getElementById("itemDescription");
 
 function add_to_shopping_list(){
 
-  let itemName = document.getElementById("itemName").value;
-  let itemDescription = document.getElementById("itemDescription").value;
+  let itemName = itemNameBox.value;
+  let itemDescription = itemDescriptionBox.value;
 
   let new_shopping_list_item = new ShoppingListItem(itemName, itemDescription);
   myShoppingList.addItem(new_shopping_list_item);
@@ -26,6 +29,8 @@ function add_to_shopping_list(){
     });
   }
 
+  itemNameBox.value = '';
+  itemDescriptionBox.value = '';
 }
 
 
