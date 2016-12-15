@@ -23,22 +23,21 @@ function add_to_shopping_list(){
 
     checkItems[i].addEventListener("change", () => {
       changeCheckedStatus(i, checkItems[i]);
-      console.log(checkItems[i]);
     });
   }
-
 
 }
 
 
 
 function changeCheckedStatus(idx, checkbox){
-
+  console.log(checkbox.checked);
   if(checkbox.checked === true){
-    console.log(checkbox.checked);
-    myShoppingList.items[idx].checked();
+    myShoppingList.items[idx].check();
+    console.log(myShoppingList.items[idx]);
   } else if(checkbox.checked === false){
     myShoppingList.items[idx].uncheck();
+    console.log(myShoppingList.items[idx]);
   }
 }
 
