@@ -17,7 +17,7 @@ function add_to_shopping_list(){
 
  let removeItems = document.querySelectorAll(".remove_item_button");
  let checkItems = document.querySelectorAll(".check-box");
- let strikeOut = document.querySelectorAll(".completed_false");
+
  for(let i = 0; i < removeItems.length; i++){
 
     removeItems[i].addEventListener("click", () => {
