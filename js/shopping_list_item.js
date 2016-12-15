@@ -18,11 +18,9 @@ class ShoppingListItem {
       listItem.className = `completed_${this.is_done}`;
 
       let checkBox = document.createElement('input');
-      checkBox.className = this.description;
+      checkBox.className = "check-box";
       checkBox.type = "checkbox";
       listItem.appendChild(checkBox);
-      let index = myShoppingList.items.indexOf(this);
-      //checkBox.addEventListener("change", () => {changeCheckedStatus(index, checkBox)});
 
       let nameSpan = document.createElement('span');
       nameSpan.innerHTML = this.name;
@@ -36,8 +34,7 @@ class ShoppingListItem {
 
       let removeButton = document.createElement('button');
       removeButton.className = "remove_item_button";
-      removeButton.addEventListener("click", () => {removeItemButtonClicked(index)});
-      removeButton.innerHTML = "X";
+      removeButton.innerHTML = "x";
       listItem.appendChild(removeButton);
 
       return listItem.outerHTML;

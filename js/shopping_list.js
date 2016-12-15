@@ -13,11 +13,15 @@ class ShoppingList {
   removeItem(item){
     if(arguments.length === 0){
       this.items.pop();
-    } else if(this.items.indexOf(item) > -1){
-      this.items.splice(this.items.indexOf(item), 1);
+    } else if(item instanceof ShoppingListItem){
+        if(this.items.indexOf(item) > -1){
+          this.items.splice(this.items.indexOf(item), 1);
       } else {
         throw Error("Cannot remove item not on your list");
       }
+    } else {
+      throw Error("Not a shopping list item");
+    }
 
   }
   render(){

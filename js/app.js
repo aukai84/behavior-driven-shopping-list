@@ -13,10 +13,17 @@ function add_to_shopping_list(){
   document.getElementById("content").innerHTML = myShoppingList.render();
 
  let removeItems = document.querySelectorAll(".remove_item_button");
-  for(let i = 0; i < removeItems.length; i++){
-    console.log(removeItems[i]);
+ let checkItems = document.querySelectorAll(".check-box");
+
+ for(let i = 0; i < removeItems.length; i++){
+
     removeItems[i].addEventListener("click", () => {
       removeItemButtonClicked(i);
+    });
+
+    checkItems[i].addEventListener("change", () => {
+      changeCheckedStatus(i, checkItems[i]);
+      console.log(checkItems[i]);
     });
   }
 
@@ -36,18 +43,23 @@ function changeCheckedStatus(idx, checkbox){
 }
 
 function removeItemButtonClicked(idx){
-console.log(idx)
-  console.log(myShoppingList.items[idx])
+
+
   myShoppingList.removeItem(myShoppingList.items[idx]);
   document.getElementById("content").innerHTML = myShoppingList.render();
 
   let removeItems = document.querySelectorAll(".remove_item_button");
+  let checkItems = document.querySelectorAll(".check-box");
+
   for(let i = 0; i < removeItems.length; i++){
-    console.log(removeItems[i]);
+
     removeItems[i].addEventListener("click", () => {
       removeItemButtonClicked(i);
     });
-  }
 
-  console.log(myShoppingList.items)
+    checkItems[i].addEventListener("change", () => {
+      changeCheckedStatus(i, checkItems[i]);
+      console.log(checkItems[i]);
+  });
+ }
 }
