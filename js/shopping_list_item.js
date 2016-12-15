@@ -1,17 +1,20 @@
 /*jshint esversion: 6 */
-var nonString;
 class ShoppingListItem {
   constructor(name, description){
     this.name = name;
     this.description = description;
     this.is_done = false;
-    this.check = function(){
-      this.is_done =true;
-    };
-    this.uncheck = function(){
-      this.is_done = false;
-    };
-    this.render = function(){
+  }
+
+  check(){
+    this.is_done =true;
+  }
+
+  uncheck(){
+    this.is_done = false;
+  }
+
+  render(){
       //return `<li class='completed_${this.is_done}'><span>${this.name}</span><span>${this.description}</span></li>`;
 
       let listItem = document.createElement('li');
@@ -38,9 +41,7 @@ class ShoppingListItem {
       listItem.appendChild(removeButton);
 
       return listItem.outerHTML;
-
-
-    };
   }
 }
+
 
