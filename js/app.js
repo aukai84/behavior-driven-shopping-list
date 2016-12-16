@@ -34,23 +34,25 @@ function changeCheckedStatus(idx, checkbox){
 function removeItemButtonClicked(idx){
 
   myShoppingList.removeItem(myShoppingList.items[idx]);
-  document.getElementById("content").innerHTML = myShoppingList.render();
+  contentContainer.innerHTML = myShoppingList.render();
 
   assignEvents();
 }
 
 function assignEvents() {
-  let removeItems = document.querySelectorAll(".remove_item_button");
-  let checkItems = document.querySelectorAll(".check-box");
-  for(let i = 0; i < removeItems.length; i++){
-    removeItems[i].addEventListener("click", () => {
+  let removeButtons = document.querySelectorAll(".remove_item_button");
+  let checkInputs = document.querySelectorAll(".check-box");
+  let listItems = document.querySelectorAll("li");
+  console.log(listItems)
+  for(let i = 0; i < listItems.length; i++){
+    removeButtons[i].addEventListener("click", () => {
       removeItemButtonClicked(i);
     });
-    checkItems[i].addEventListener("change", () => {
-      changeCheckedStatus(i, checkItems[i]);
+    checkInputs[i].addEventListener("change", () => {
+      changeCheckedStatus(i, checkInputs[i]);
     });
     if(myShoppingList.items[i].is_done === true){
-      checkItems[i].checked = true;
+      checkInputs[i].checked = true;
     }
   }
 }
