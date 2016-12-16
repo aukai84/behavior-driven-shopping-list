@@ -40,7 +40,7 @@ describe("ShoppingListItem", () => {
   it("should have a method render", () => {
     milk.render.should.be.a.function;
     milk.render().should.be.a("string");
-    milk.render().should.equal(`<li class="completed_${milk.is_done}"><input class="check-box" type="checkbox"><span>${milk.name}</span><span>${milk.description}</span><button class="remove_item_button">x</button></li>`);
+    milk.render().should.equal(`<li class="completed_${milk.is_done}"><input class="check-box" type="checkbox"><span>${milk.name} : </span><span>${milk.description}</span><button class="remove_item_button">x</button></li>`);
   });
 });
 
