@@ -2,8 +2,6 @@
 const should = chai.should();
 const expect = chai.expect();
 
-
-
 describe("ShoppingListItem", () => {
   let milk;
 

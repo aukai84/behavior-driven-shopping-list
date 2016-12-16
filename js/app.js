@@ -6,7 +6,7 @@ contentContainer.innerHTML = myShoppingList.render();
 const itemNameBox = document.getElementById("itemName");
 const itemDescriptionBox = document.getElementById("itemDescription");
 
-function add_to_shopping_list(){
+function add_to_shopping_list(event){
 
   let itemName = itemNameBox.value;
   let itemDescription = itemDescriptionBox.value;
@@ -15,24 +15,7 @@ function add_to_shopping_list(){
   myShoppingList.addItem(new_shopping_list_item);
   contentContainer.innerHTML = myShoppingList.render();
 
- let removeItems = document.querySelectorAll(".remove_item_button");
- let checkItems = document.querySelectorAll(".check-box");
-
- for(let i = 0; i < removeItems.length; i++){
-
-    removeItems[i].addEventListener("click", () => {
-      removeItemButtonClicked(i);
-    });
-
-    checkItems[i].addEventListener("change", () => {
-      changeCheckedStatus(i, checkItems[i]);
-    });
-
-    if(myShoppingList.items[i].is_done === true){
-      checkItems[i].checked = true;
-    }
-
-  }
+  assignEvents();
 
   itemNameBox.value = '';
   itemDescriptionBox.value = '';
@@ -56,22 +39,21 @@ function removeItemButtonClicked(idx){
   myShoppingList.removeItem(myShoppingList.items[idx]);
   document.getElementById("content").innerHTML = myShoppingList.render();
 
+  assignEvents();
+}
+
+function assignEvents() {
   let removeItems = document.querySelectorAll(".remove_item_button");
   let checkItems = document.querySelectorAll(".check-box");
-
   for(let i = 0; i < removeItems.length; i++){
-
     removeItems[i].addEventListener("click", () => {
       removeItemButtonClicked(i);
     });
-
     checkItems[i].addEventListener("change", () => {
       changeCheckedStatus(i, checkItems[i]);
-      console.log(checkItems[i]);
     });
-
     if(myShoppingList.items[i].is_done === true){
       checkItems[i].checked = true;
     }
- }
+  }
 }
