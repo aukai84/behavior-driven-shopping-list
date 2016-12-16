@@ -15,7 +15,6 @@ class ShoppingListItem {
   }
 
   render(){
-      //return `<li class='completed_${this.is_done}'><span>${this.name}</span><span>${this.description}</span></li>`;
 
       let listItem = document.createElement('li');
       listItem.className = `completed_${this.is_done}`;
@@ -26,7 +25,7 @@ class ShoppingListItem {
       listItem.appendChild(checkBox);
 
       let nameSpan = document.createElement('span');
-      nameSpan.innerHTML = this.name;
+      nameSpan.innerHTML = `${this.name} : `;
       listItem.appendChild(nameSpan);
 
       let descriptionSpan = document.createElement('span');
