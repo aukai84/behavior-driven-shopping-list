@@ -22,7 +22,7 @@ describe("ShoppingListItem", () => {
   it("should only have two parameters", () => {
     console.log(milk);
     milk.constructor.should.have.length(2);
-  })
+  });
   it("should have property to show if its done", () => {
     milk.should.have.property("is_done");
     milk.is_done.should.equal(false);

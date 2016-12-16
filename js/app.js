@@ -6,7 +6,13 @@ contentContainer.innerHTML = myShoppingList.render();
 const itemNameBox = document.getElementById("itemName");
 const itemDescriptionBox = document.getElementById("itemDescription");
 
-function add_to_shopping_list(event){
+let addButton = document.createElement("button");
+addButton.Id ="add_shopping_list_item_button";
+addButton.addEventListener("click", () => {add_to_shopping_list_clicked();});
+addButton.innerHTML = "Add To List";
+addContainer.appendChild(addButton);
+
+function add_to_shopping_list_clicked(event){
 
   let itemName = itemNameBox.value;
   let itemDescription = itemDescriptionBox.value;
