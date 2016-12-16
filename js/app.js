@@ -24,13 +24,10 @@ function add_to_shopping_list(event){
 
 
 function changeCheckedStatus(idx, checkbox){
-  console.log(checkbox.checked);
   if(checkbox.checked === true){
     myShoppingList.items[idx].check();
-    console.log(myShoppingList.items[idx]);
   } else if(checkbox.checked === false){
     myShoppingList.items[idx].uncheck();
-    console.log(myShoppingList.items[idx]);
   }
 }
 
