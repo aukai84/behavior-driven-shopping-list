@@ -1,3 +1,8 @@
+/* This seems hacky to me.... but it works?*/
+.check-box:checked + span + span {
+  text-decoration: line-through;
+}
 .check-box:checked + span {
   text-decoration: line-through;
 }
+
